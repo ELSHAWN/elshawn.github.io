@@ -62,76 +62,70 @@ $(function() {
 
 </script>
 
-<script type='application/ld+json'>
-{
-  "@context": "http://www.schema.org",
-  "@type": "Person",
-  "name": "ELSHAWN",
-  "url": "https://elshawn.com",
-  "email": "elshawnmusic@gmail.com",
-  "sameAs" : [
-    "https://www.facebook.com/iAmELSHAWN",
-    "https://open.spotify.com/artist/0At7UcDRjatpIYa0QYoERh",
-    "https://www.instagram.com/iAmELSHAWN",
-    "https://www.youtube.com/channel/UCVg1qM9i0SZxvWvIj64mroQ/",
-    "https://soundcloud.com/iamelshawn"
-  ],
-  "alumniOf" :[
-    {
-    "@context": "http://schema.org",
-    "@type": "CollegeOrUniversity",
-    "name": "Guru Gobind Singh Indraprastha University",
-    "sameAs": [
-      "http://en.wikipedia.org/wiki/Guru_Gobind_Singh_Indraprastha_University",
-      "http://www.ipu.ac.in"
-          ]
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "CollegeOrUniversity",
-      "name": "Queen Mary University of London",
-      "sameAs": [
-        "https://en.wikipedia.org/wiki/Queen_Mary_University_of_London",
-        "http://www.qmul.ac.uk"
-            ]
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "CollegeOrUniversity",
-      "name": "Trinity College London",
-      "url":"http://www.trinitycollege.com/",
-      "sameAs":
-        "https://en.wikipedia.org/wiki/Trinity_College_London"
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "HighSchool",
-      "name": "Mount Carmel School",
-      "sameAs": [
-        "https://en.wikipedia.org/wiki/Mount_Carmel_School",
-        "http://www.mountcarmeldelhi.com/"
-            ]
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "Corporation",
-      "name": "Axetue"
-    }
-  ],
-  "image": "https://elshawn.com/image.jpg",
-  "height": "69 inches",
-  "gender": "male",
-  "birthDate": "1991-06-08",
-  "birthPlace": "Connaught Place, New Delhi"
-}
- </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
 
-<title>ELSHAWN - Musician | Record Producer | Singer</title>
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var projects = [
+      {
+        value: "alight",
+        label: "Alight",
+        url: "https://gumroad.com/l/alightbyelshawn",
+        yt: "https://youtu.be/UYd5gYKIgxo",
+        icon: "alight.png"
+      },
+      {
+        value: "life",
+        label: "Life",
+        url: "https://gumroad.com/l/elshawnlife",        
+        yt: "https://www.youtube.com/watch?v=KXJekPuAyl8",
+        icon: "life.jpeg"
+      }
+    ];
+ 
+    $( "#project" ).autocomplete({
+      minLength: 0,
+      source: projects,
+      focus: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        return false;
+      },
+      select: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        $( "#project-id" ).val( ui.item.value );
+        $( "#project-id1" ).html( ui.item.label );
+        $( "#project-description" ).html( ui.item.url );
+        $( "#project-description2" ).attr( "href", ui.item.url );
+        $( "#project-description2" ).html( 'Buy License' );
+        $( "#project-description2" ).css("background-color", "#ff0000");
+        $( "#project-yt" ).attr( "href", ui.item.yt );
+        $( "#project-yt" ).html( 'Watch Video' );
+        $( "#project-yt" ).css("background-color", "#fafafa");
+        $( "#project-icon" ).attr( "src", "img/track-thumb/" + ui.item.icon );
+        $( "#project-icon" ).css("height", "260");
+ 
+        return false;
+      }
+    })
+    .autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+        .append( "<div>" + item.label + "<br>" + item.url + "</div>" )
+        .appendTo( ul );
+    };
+  } );
+  </script>
+
+<title>Commercial License | ELSHAWN</title>
 </head>
 
 <body>
+    
 
-  <section class="home" id="home">
+ <section style="height: 100%;background:none;padding-bottom:3%;" class="home" id="home">
       <div class="hp-filter">
           
     <!-- this is for header -->
@@ -141,24 +135,45 @@ $(function() {
         $( "#header-container" ).load( "/html-comp/header.html" );
     </script>
     
-    <div class="home-content">
+    <div align="center" class="home-content">
+        
+        <!-- wp:paragraph -->
+        <p>You can purchase any of the following commercial licenses for any of my original songs. </p>
+        <!-- /wp:paragraph -->
+        
+        <!-- wp:paragraph -->
+        <p>Please search songs using the search box.</p>
+        <!-- /wp:paragraph -->
 
-      <p style="padding-top:20%;" align="left">
+       <p> 
+            <img id="project-icon" src="images/transparent_1x1.png" class="ui-state-default" alt="">
+            <input placeholder="Search Song Name" id="project">
+            <input type="hidden" id="project-id"><br/>
+            <!--<p id="project-id1"></p> -->
+           <br/> <a target="_blank" href="" id="project-yt"></a><br/>
+           <br/> <a target="_blank" href="" id="project-description2"></a>
+       </p>
 
-        I'm a <b>Record Producer</b> & <b>Musician</b>. <br/>I make acoustic & tropical/chill music.<br/>
-        <p style="font-size:80%;padding-top:2%;">
+      <!---<p align="center" style="padding-top:20%;" align="left">-->
+        <b>Pricing & Details</b>
+        
+        <table class="wp-block-table">
+            <tbody><tr><td></td><td><img class="wp-image-122" style="width: 150px;" src="/img/1.png" alt="Online Basic License"></td><td><img class="wp-image-123" style="width: 150px;" src="/img/2.png" alt=""></td><td><img class="wp-image-124" style="width: 150px;" src="/img/3.png" alt=""></td><td><img class="wp-image-125" style="width: 150px;" src="/img/4.png" alt=""></td></tr><tr><td><strong>Cost</strong></td><td><strong>$</strong>40</td><td><strong>$</strong>150</td><td><strong>$</strong>250</td><td><strong>$</strong>300</td></tr><tr><td><strong>Credits Required</strong></td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><td><strong>Commercial<br>Usage</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td><strong>Online Ad*</strong></td><td>No</td><td>Yes</td><td>No</td><td>Yes</td></tr><tr><td><strong>Offline Usage**</strong></td><td>No</td><td>No </td><td>Yes</td><td>Yes</td></tr>
+            </tbody>
+        </table><br/>
+            
+            <span style="font-size: 60%;">*Online ad includes any commercial or product/service promotion on any digital or social media platform.<br/>
+            
+            **Offline usage includes commercial usage on any offline platform such as television or radio.</span>
 
-            <span class="highlight"><i class="fas fa-chevron-right"></i>&nbsp;<a  class="hp-link" href="https://www.youtube.com/channel/UCVg1qM9i0SZxvWvIj64mroQ/videos?view=0&sort=dd&shelf_id=0" target="_blank">Browse <b>My Tracks </b></a>&nbsp;</span><br/>
-            <span class="highlight"> <i class="fas fa-chevron-right"></i>&nbsp;<a class="hp-link" href="/usage-policy">Read <b>Usage Policy</b></a>&nbsp;</span><br/>
-        </p>
-    </p>
 
+
+    <!--<p align="center"><a href="https://amu.se/elshawn-high" target="_blank" class="lsnbtn">Listen Now</a></p> -->
 
     </div> <!-- .hp-filter -->
     </div>
 
   </section>
-
 
 <div id="result"></div>
 <script>

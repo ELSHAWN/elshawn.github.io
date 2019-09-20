@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+    		<p id="demo"></p>
+
+    <script src="faq.js"></script>
+
+<script>
+var myObj, i, x = "";
+
+//x = myObj[1].name;
+
+for (i in myObj) {
+    /*x += "<i class='fa fa-dot-circle-o' aria-hidden='true'></i>&nbsp;&nbsp;<a target='_blank' href='" + myObj[i].url + "'>" + myObj[i].title + "</a><br/>"; */
+    x += "<p><b>Q:&nbsp;" + myObj[i].ques + "</b><br/>A:&nbsp;" + myObj[i].ans + "<br/></p>";
+}
+
+document.getElementById("demo").innerHTML = x;
+
+</script>
+</body>
+
+</html>

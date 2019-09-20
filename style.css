@@ -474,6 +474,12 @@ a.h-link {
     font-weight: normal;
     color: #fafafa;
 }
+
+#home:hover,
+.home-link:hover {
+    background-color: transparent;
+}
+
 section.home {
     //background-color: ##F5F5F5;
     background-size: contain;
@@ -520,6 +526,8 @@ a.know:hover,
 a.know:active {
   padding-right: 25px;
   text-decoration: none;
+  background: transparent;
+  color: #fafafa;
 }
 
 a.twitter {
@@ -610,3 +618,146 @@ a.right-dots {
   margin-left: 10%;
   text-align: left;
 }
+
+.hp-filter {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+span.highlight:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+    color: #111111 !important;
+    transition-duration: 0.8s;
+} 
+
+a:link,
+a:visited,
+a {
+    color: #fafafa;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    transition-duration: 0.4s;
+}
+.hp-link:hover {
+    color: #111111;
+}
+.abt {
+    float: left;
+    padding-left: 2%;
+    padding-top: 0.25%;
+    font-size: 200%;
+    cursor: pointer;
+}
+
+/**Overlay menu sttyling **/
+
+
+/* overlay navigation */
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay {
+  text-decoration: none;
+  font-size: 26px;
+  color: #fafafa;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay a {
+  text-decoration: none;
+  font-size: 26px;
+	font-weight: bolder;
+  color: #e0e0e0;
+  background-color: transparent;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+  background-color: transparent;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 3%;
+  font-size: 60px;
+}
+
+/* Commercial license page */
+.wp-block-table {
+    font-size: 70%;
+    background: #fafafa;
+    color: #111111;
+    border-radius: 1%;
+    padding: 1%;
+    height: auto;
+}
+td {padding: 1%;}
+
+  #project-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  #project-icon {
+    float: left;
+    /*height: 320px;
+    width: 320px;*/
+    margin-right: 3%;
+  }
+  #project-description {
+    margin: 0;
+    padding: 0;
+  }
+  .ui-autocomplete-input {
+          width: 100%;
+    max-width: 600px;
+  }
+  #project-yt {
+      font-size: 70%;
+    color: #212121;
+    padding: 0.25%;
+    border-radius: 2%;
+    text-decoration: none;
+  }
+  #project-description2 {
+    border-radius: 2%;
+    padding: 0.35%;
+    text-decoration: none;
+  }
+  
+  
+  
+  
+  
+  
