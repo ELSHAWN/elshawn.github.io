@@ -54,26 +54,26 @@
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        
+
           ga('create', 'UA-74122921-1', 'auto');
           ga('send', 'pageview');
-    
+
     </script>
 
 <title>Frequently Asked Questions | FAQ | ELSHAWN </title>
 </head>
 
 <body>
-    
+
   <section style="height:100%;background: none;" class="home" id="home">
       <div class="hp-filter">
-    
+
     <!-- this is for header -->
     <div id="header-container"></div>
     <script>
         // using jQuery to load a template to id result
         $( "#header-container" ).load( "/html-comp/header.html" );
-    </script>       
+    </script>
 
     <div style="font-size:25px;" class="home-content">
 
@@ -81,20 +81,31 @@
 
     		<p id="demo"></p>
 
-    <script src="/faq-js/faq.js"></script>
+    <!--<script src="/faq-js/faq.js"></script>-->
+    <script>
+    function readJSON(file) {
+        var request = new XMLHttpRequest();
+        request.open('GET', file, false);
+        request.send(null);
+        if (request.status == 200)
+            return request.responseText;
+        };
+
+    var myObj = JSON.parse(readJSON('/faq-js/faq-data.js'));
+</script>
 
     <script>
     var myObj, i, x = "";
-    
+
     //x = myObj[1].name;
-    
+
     for (i in myObj) {
         /*x += "<i class='fa fa-dot-circle-o' aria-hidden='true'></i>&nbsp;&nbsp;<a target='_blank' href='" + myObj[i].url + "'>" + myObj[i].title + "</a><br/>"; */
         x += "<p><b>Q:&nbsp;" + myObj[i].ques + "</b><br/>A:&nbsp;" + myObj[i].ans + "<br/></p>";
     }
-    
+
     document.getElementById("demo").innerHTML = x;
-    
+
     </script>
 
     </p>
