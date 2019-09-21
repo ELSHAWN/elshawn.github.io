@@ -1,0 +1,14 @@
+User-Agent: *
+Disallow: 
+Disallow: /cgi-bin/*
+Disallow: /faq-js/*
+Disallow: /fonts/*
+Disallow: /html-comp/*
+Disallow: /.htaccess
+Disallow: /logo.html
+Disallow: /404.html
+Allow: /
+
+User-Agent: Googlebot-Image
+Allow: /img
+Allow: /bg
